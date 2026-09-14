@@ -1,73 +1,101 @@
-body{
-    background-color: #78ffd6;
+/* Using a CSS variable to make changing the theme color super easy later */
+:root {
+  --theme-color: #0ad3ff;
+  --bg-color: #78ffd6;
+  --text-dark: #28262c;
 }
 
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-color);
+  font-family: Arial, Helvetica, sans-serif;
+  /* Centering layout: uses flexbox to lock the card exactly in the middle of the screen */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Fills screen height completely */
+  min-height: 100svh; /* Modern mobile-safe viewport height to account for moving URL bars */
+  padding: 20px; /* This creates the uniform border background frame around your card on mobile */
 }
 
 .card {
   background-color: #fff;
-  border-radius: 10px;
+  border-radius: 15px;
   border: 1px solid #e0e0e0;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  max-width: 1000px;
-  margin: 50px auto;
-  padding: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  
+  /* Responsive Width Logic */
+  width: 100%;
+  max-width: 550px; /* Keeps the card looking elegant on desktop, but lets it shrink on mobile */
+  
+  padding: 30px 24px;
+  text-align: center;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .card-title {
-  font-size: 80px;
+  font-size: 2.5rem; /* Scales perfectly across different screens */
   font-weight: bold;
-  color: #0ad3ff;
-  font-family: Arial, sans-serif;
-  text-align: center;
-  margin-bottom: 140px;
+  color: var(--theme-color);
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
 }
 
 .card-text {
-  font-size: 40px;
-  color: #28262c;
-  font-family: Arial, Helvetica, sans-serif;  
-  text-align: center;
+  font-size: 1.25rem;
+  color: var(--text-dark);
+  margin-bottom: 0.75rem;
+  line-height: 1.5;
 }
 
 .card-text-ending {
-  font-size: 40px;
-  color: #28262c;
-  font-family: Arial, Helvetica, sans-serif;
-  text-align: center;
+  font-size: 1.35rem;
+  font-weight: bold;
+  color: var(--text-dark);
+  margin-bottom: 1.5rem;
 }
 
 .card-image {
   display: block;
-  margin: 20px auto;
-  max-width: 100%;
+  max-width: 80%; /* Shrinks dynamically to fit mobile cards without overflow */
+  height: auto;
   border-radius: 10px;
-  margin-bottom: 20px;
+  margin-bottom: 2rem;
 }
 
 .card-button {
   display: block;
-  margin: 20px auto;
-  padding: 25px 35px;
-  font-size: 30px;
+  padding: 16px 32px;
+  font-size: 1.25rem;
+  font-weight: bold;
   color: #fff;
-  background-color: #0ad3ff;
+  background-color: var(--theme-color);
   border: none;
-  border-radius: 8px;
+  border-radius: 50px; /* Rounded pill shape looks very modern and clean */
   cursor: pointer;
-  margin-bottom: 80px;
-  transition: transform 0.1s ease;
+  box-shadow: 0 4px 15px rgba(10, 211, 255, 0.3);
+  margin-bottom: 2rem;
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
 }
 
 .card-button:active {
   transform: scale(0.95);
+  box-shadow: 0 2px 5px rgba(10, 211, 255, 0.2);
 }
 
 .name-text {
-  font-size: 30px;
-  color: #28262c;
-  font-family: Arial, Helvetica, sans-serif;
-  text-align: center;
+  font-size: 1.1rem;
+  color: var(--text-dark);
+  font-weight: bold;
+  opacity: 0.9;
 }
