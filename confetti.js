@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
     constructor(x, y) {
       this.x = x;
       this.y = y;
-      this.size = Math.random() * 6 + 5;
+      this.size = Math.random() * 8 + 5;
       this.color = colors[Math.floor(Math.random() * colors.length)];
       this.vx = (Math.random() - 0.5) * 12; // Side spread
       this.vy = (Math.random() * -12) -12;  // Upward explosion thrust
