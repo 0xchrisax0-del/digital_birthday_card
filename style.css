@@ -102,44 +102,47 @@ body {
 
 /* This media query triggers specifically for mobile screens (phones) */
 
-@media (max-width: 480px) {
+@media (max-width: 767px) {
   body {
-    padding: 10px; /* Thinner border around the edge of the phone screen */
+    padding: 16px; /* Uniform background border frame around the screen */
   }
 
   .card {
-    padding: 45px 20px; /* Gives you more horizontal room inside the card */
+    max-width: 100%; /* Forces the white card to expand horizontally */
+    padding: 50px 24px; /* Gives nice vertical padding inside */
+    border-radius: 20px;
   }
 
   .card-title {
-    font-size: 2.8rem; /* Bumps up the main header size */
+    font-size: 2.6rem; /* Bumps up the main header size */
     margin-bottom: 2rem;
   }
 
   .card-text {
-    font-size: 1.4rem; /* Makes the main message noticeably larger and easier to read */
+    font-size: 1.35rem; /* Larger, readable message font */
     margin-bottom: 1rem;
   }
 
   .card-text-ending {
-    font-size: 1.5rem; /* Bumps up the professor sign-off text */
-    margin-bottom: 2rem;
-  }
-
-  .card-image {
-    max-width: 95%; /* Allows your balloon art to scale up significantly bigger on mobile */
+    font-size: 1.45rem;
     margin-bottom: 2.5rem;
   }
 
+  .card-image {
+    max-width: 75%; /* Scales your balloon art up beautifully */
+    margin-bottom: 3rem;
+  }
+
   .card-button {
-    width: 90%; /* Makes the button a wider target, looking more like a native app button */
-    padding: 18px 0; /* Taller button for easier pressing */
+    width: 85%; /* Widens the button to look like a premium mobile app UI */
+    padding: 18px 0;
     font-size: 1.4rem;
+    border-radius: 12px; /* Sleeker app-style button corners */
     margin-bottom: 2.5rem;
   }
 
   .name-text {
-    font-size: 1.25rem; /* Scales up your name at the bottom */
+    font-size: 1.2rem;
   }
 }
 
