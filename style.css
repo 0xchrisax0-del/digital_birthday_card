@@ -20,7 +20,7 @@ body {
   align-items: center;
   min-height: 100vh; /* Fills screen height completely */
   min-height: 100svh; /* Modern mobile-safe viewport height to account for moving URL bars */
-  padding: 20px; /* This creates the uniform border background frame around your card on mobile */
+  padding: 12px; /* This creates the uniform border background frame around your card on mobile */
 }
 
 .card {
@@ -33,7 +33,7 @@ body {
   width: 100%;
   max-width: 550px; /* Keeps the card looking elegant on desktop, but lets it shrink on mobile */
   
-  padding: 30px 24px;
+  padding: 40px 28px;
   text-align: center;
 }
 
@@ -99,3 +99,47 @@ body {
   font-weight: bold;
   opacity: 0.9;
 }
+
+/* This media query triggers specifically for mobile screens (phones) */
+
+@media (max-width: 480px) {
+  body {
+    padding: 10px; /* Thinner border around the edge of the phone screen */
+  }
+
+  .card {
+    padding: 45px 20px; /* Gives you more horizontal room inside the card */
+  }
+
+  .card-title {
+    font-size: 2.8rem; /* Bumps up the main header size */
+    margin-bottom: 2rem;
+  }
+
+  .card-text {
+    font-size: 1.4rem; /* Makes the main message noticeably larger and easier to read */
+    margin-bottom: 1rem;
+  }
+
+  .card-text-ending {
+    font-size: 1.5rem; /* Bumps up the professor sign-off text */
+    margin-bottom: 2rem;
+  }
+
+  .card-image {
+    max-width: 95%; /* Allows your balloon art to scale up significantly bigger on mobile */
+    margin-bottom: 2.5rem;
+  }
+
+  .card-button {
+    width: 90%; /* Makes the button a wider target, looking more like a native app button */
+    padding: 18px 0; /* Taller button for easier pressing */
+    font-size: 1.4rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .name-text {
+    font-size: 1.25rem; /* Scales up your name at the bottom */
+  }
+}
+
